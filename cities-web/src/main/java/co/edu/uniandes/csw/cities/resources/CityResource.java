@@ -41,8 +41,9 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 /**
- * Clase que implementa el recurso "cities".
+ * <pre>Clase que implementa el recurso "cities".
  * URL: /api/cities
+ * </pre>
  * <i>Note que la aplicación (definida en {@link RestConfig}) define la ruta "/api" y
  * este recurso tiene la ruta "cities".</i>
  *
