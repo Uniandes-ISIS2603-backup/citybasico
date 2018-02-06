@@ -32,24 +32,22 @@ import co.edu.uniandes.csw.cities.entities.CityEntity;
  * 
  * Al serializarse como JSON esta clase implementa el siguiente modelo: <br>
  * <pre>
- * {@code  
  *   {
  *      "id": number,
  *      "name: string,
  *      "zipcode": string
  *   }
- * }
  * </pre>
  * Por ejemplo una ciudad se representa asi:<br>
  * 
  * <pre>
- * {@code 
+ * 
  *   {
  *      "id": 91852,
  *      "name: "Bogota, DC",
  *      "zipcode": "121110"
  *   }
- * }
+ *
  * </pre>
  * @author ISIS2603
  */

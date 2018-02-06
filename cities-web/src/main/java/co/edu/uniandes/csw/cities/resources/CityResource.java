@@ -29,7 +29,8 @@ import co.edu.uniandes.csw.cities.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.cities.mappers.BusinessLogicExceptionMapper;
 import java.util.ArrayList;
 import java.util.List;
-import javax.ejb.Stateless;
+import javax.enterprise.context.RequestScoped;
+import javax.ws.rs.Consumes;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -40,32 +41,39 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 /**
- * Clase que implementa el recurso REST correspondiente a "cities".
- * Recurso: /api/cities
+ * Clase que implementa el recurso "cities".
+ * URL: /api/cities
  * <i>Note que la aplicación (definida en {@link RestConfig}) define la ruta "/api" y
  * este recurso tiene la ruta "cities".</i>
  *
- * @author ISIS2603
- * @version 1.0
+ * <h2>Anotaciones </h2>
+ * <pre>
+ * Path: indica la dirección después de "api" para acceder al recurso
+ * Produces/Consumes: indica que los servicios definidos en este recurso reciben y devuelven objetos en formato JSON
+ * RequestScoped: Inicia una transacción desde el llamado de cada método (servicio). 
+ * </pre>
+ * @author ISIS2603  
+ * @version %I% 
  */
 @Path("cities")
 @Produces("application/json")
-@Stateless
+@Consumes("application/json")
+@RequestScoped
 public class CityResource {
 
     /**
-     * <h1>POST /api/cities : Crear ciudad</h1><br><br>
-     * Cuerpo de peticion: JSON&lt;{@link CityDetailDTO}&gt;<br><br>
+     * <h1>POST /api/cities : Crear ciudad</h1>
+     * <p>Cuerpo de peticion: JSON {@link CityDetailDTO}</p>
      * 
-     * Crea una nueva ciudad con la informacion que se recibe en el cuerpo de la peticion.<br><br>
+     * <p>Crea una nueva ciudad con la informacion que se recibe en el cuerpo de la peticion.</p>
      * 
      * Codigos de respuesta<br>
-     * <code style="color: mediumseagreen; background-color: #eaffe0;">200 OK</code> 
-     * Se crea la nueva ciudad y se regresa un objeto identico con un id auto-generado por la base de datos.<br>
-     * <code style="color: #c7254e; background-color: #f9f2f4;">412 Precodition Failed</code>
-     * Ya existe la ciudad o no fue posible agregarla a la base de datos.
+     * <code style="color: mediumseagreen; background-color: #eaffe0;">200 OK
+     * Se crea la nueva ciudad y se regresa un objeto identico con un id auto-generado por la base de datos.</code>
+     * <code style="color: #c7254e; background-color: #f9f2f4;">412 Precodition Failed
+     * Ya existe la ciudad.</code>
      * @param city {@link CityDetailDTO} - La ciudad que se desea guardar.
-     * @return JSON&lt;{@link CityDetailDTO}&gt; - La ciudad guardada con el atributo id autogenerado.
+     * @return JSON {@link CityDetailDTO}  - La ciudad guardada con el atributo id autogenerado.
      * @throws BusinessLogicException {@link BusinessLogicExceptionMapper} - Error de logica que se genera al no poder crear la ciudad.
      */
     @POST
