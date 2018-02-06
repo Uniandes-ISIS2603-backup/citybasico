@@ -31,6 +31,11 @@ import javax.ws.rs.ext.Provider;
 
 /**
  * Convertidor de Excepciones BookLogicException a mensajes REST.
+ * 
+ * El error se transforma bajo el siguiente modelo:
+ * Codigo de respuesta: <code style="color: #c7254e; background-color: #f9f2f4;">412 Precodition Failed</code>
+ * Respuesta: La razon del error
+ * 
  *
  * @author ISIS2603
  */
@@ -41,7 +46,7 @@ public class BusinessLogicExceptionMapper implements ExceptionMapper<BusinessLog
      * Generador de una respuesta a partir de una excepción
      *
      * @param exception excepión a convertir a una respuesta REST
-     * @return
+     * @return El objeto de Respuesta HTTP para enviar al cliente
      */
     @Override
     public Response toResponse(BusinessLogicException exception) {

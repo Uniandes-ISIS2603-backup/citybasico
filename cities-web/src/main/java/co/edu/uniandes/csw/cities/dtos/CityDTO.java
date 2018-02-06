@@ -26,10 +26,31 @@ package co.edu.uniandes.csw.cities.dtos;
 import co.edu.uniandes.csw.cities.entities.CityEntity;
 
 /**
- * CityDTO Objeto de transferencia de datos de Cityes. Los DTO contienen las
+ * CityDTO Objeto de transferencia de datos de Cities. Los DTO contienen las
  * represnetaciones de los JSON que se transfieren entre el cliente y el
  * servidor.
- *
+ * 
+ * Al serializarse como JSON esta clase implementa el siguiente modelo: <br>
+ * <pre>
+ * {@code  
+ *   {
+ *      "id": number,
+ *      "name: string,
+ *      "zipcode": string
+ *   }
+ * }
+ * </pre>
+ * Por ejemplo una ciudad se representa asi:<br>
+ * 
+ * <pre>
+ * {@code 
+ *   {
+ *      "id": 91852,
+ *      "name: "Bogota, DC",
+ *      "zipcode": "121110"
+ *   }
+ * }
+ * </pre>
  * @author ISIS2603
  */
 public class CityDTO {
@@ -58,42 +79,42 @@ public class CityDTO {
     }
 
     /**
-     * @return the id
+     * @return El ID de la ciudad
      */
     public Long getId() {
         return id;
     }
 
     /**
-     * @param id the id to set
+     * @param id El nuevo ID
      */
     public void setId(Long id) {
         this.id = id;
     }
 
     /**
-     * @return the name
+     * @return El nombre de la ciudad
      */
     public String getName() {
         return name;
     }
 
     /**
-     * @param name the name to set
+     * @param name El nuevo nombre
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * @return the zipcode
+     * @return El zipcode de la ciudad
      */
     public String getZipcode() {
         return zipcode;
     }
 
     /**
-     * @param zipcode the zipcode to set
+     * @param zipcode El nuevo zipcode
      */
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;

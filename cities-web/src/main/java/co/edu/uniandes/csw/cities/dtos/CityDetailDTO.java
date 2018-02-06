@@ -25,7 +25,9 @@ package co.edu.uniandes.csw.cities.dtos;
 import co.edu.uniandes.csw.cities.entities.CityEntity;
 
 /**
- *
+ * Clase que extiende de {@link CityDTO} para manejar la transformacion entre
+ * los objetos JSON y las Entidades de la base de datos. Para conocer el
+ * contenido de la ciudad vaya a la documentacion de {@link CityDTO}
  * @author ISIS2603
  */
 public class CityDetailDTO extends CityDTO {
@@ -39,7 +41,7 @@ public class CityDetailDTO extends CityDTO {
     /**
      * Constructor para transformar un Entity a un DTO
      *
-     * @param entity
+     * @param entity La entidad de ciudad a partir de la cual se construye el objeto
      */
     public CityDetailDTO(CityEntity entity) {
         super(entity);
@@ -48,7 +50,7 @@ public class CityDetailDTO extends CityDTO {
     /**
      * Transformar un DTO a un Entity
      *
-     * @return 
+     * @return  La entidad construida a partir del DTO.
      */
     @Override
     public CityEntity toEntity() {
