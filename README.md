@@ -1,7 +1,7 @@
-# Ejemplo REST Cities
+# Ejemplo REST Cities básico:
 
 Ejemplo de un servicio REST implementado usando JAX-RS. 
-El servicio permite manipular datos de ciudades. 
+En este ejemplo no se conecta los servicios de los recursos con la lógica. EL propósito es ilustrar las signaturas de los servicios REST y su documentación. 
 
 ## Estructura del proyecto
 
