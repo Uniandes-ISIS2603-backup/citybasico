@@ -54,7 +54,7 @@ import javax.ws.rs.Produces;
  * RequestScoped: Inicia una transacción desde el llamado de cada método (servicio). 
  * </pre>
  * @author ISIS2603  
- * @version %I% 
+ * @version
  */
 @Path("cities")
 @Produces("application/json")
@@ -75,7 +75,7 @@ public class CityResource {
      * Ya existe la ciudad.</code>
      * @param city {@link CityDetailDTO} - La ciudad que se desea guardar.
      * @return JSON {@link CityDetailDTO}  - La ciudad guardada con el atributo id autogenerado.
-     * @throws BusinessLogicException {@link BusinessLogicExceptionMapper} - Error de logica que se genera al no poder crear la ciudad.
+     * @throws BusinessLogicException {@link BusinessLogicExceptionMapper} - Error de logica que se genera cuando ya existe la ciudad.
      */
     @POST
     public CityDetailDTO createCity(CityDetailDTO city) throws BusinessLogicException {
@@ -83,35 +83,32 @@ public class CityResource {
     }
 
     /**
-     * <h1>GET /api/cities : Obtener ciudades</h1><br><br>
+     * <h1>GET /api/cities : Obtener ciudades</h1>
      * 
-     * Busca y devuelve todas las ciudades que existen en la aplicacion.<br><br>
+     * <p>Busca y devuelve todas las ciudades que existen en la aplicacion.</p>
      * 
      * Codigos de respuesta<br>
-     * <code style="color: mediumseagreen; background-color: #eaffe0;">200 OK</code> 
-     * Devuelve todas las ciudades de la aplicacion.<br>
-     * <code style="color: #c7254e; background-color: #f9f2f4;">412 Precodition Failed</code> 
-     * No se pudo acceder a la base de datos de ciudades.
-     * @return JSONArray&lt;{@link CityDetailDTO}&gt; - Las ciudades encontradas en la aplicacion.
-     * @throws BusinessLogicException {@link BusinessLogicExceptionMapper} - Error de logica que se genera al no poder acceder a las ciudades.
+     * <code style="color: mediumseagreen; background-color: #eaffe0;">200 OK
+     * Devuelve todas las ciudades de la aplicacion.</code> 
+     * @return JSONArray {@link CityDetailDTO} - Las ciudades encontradas en la aplicacion.
      */
     @GET
-    public List<CityDetailDTO> getCities() throws BusinessLogicException {
+    public List<CityDetailDTO> getCities() {
         return new ArrayList<>();
     }
 
     /**
-     * <h1>GET /api/cities/{id} : Obtener ciudad por id</h1><br><br>
+     * <h1>GET /api/cities/{id} : Obtener ciudad por id</h1>
      * 
-     * Busca la ciudad con el ID asociado recibido en la URL y la devuelve<br><br>
+     * <p>Busca la ciudad con el ID asociado recibido en la URL y la devuelve</p>
      * 
      * Codigos de respuesta<br>
-     * <code style="color: mediumseagreen; background-color: #eaffe0;">200 OK</code> 
-     * Devuelve la ciudad buscada.<br>
-     * <code style="color: #c7254e; background-color: #f9f2f4;">404 Not Found</code> 
-     * No se pudo acceder a la base de datos de ciudades, o no existe la ciudad buscada.
+     * <code style="color: mediumseagreen; background-color: #eaffe0;">200 OK
+     * Devuelve la ciudad buscada.</code> 
+     * <code style="color: #c7254e; background-color: #f9f2f4;">404 Not Found
+     * No se pudo acceder a la base de datos de ciudades, o no existe la ciudad buscada.</code> 
      * @param id Identificador de la ciudad que se esta buscando
-     * @return JSON&lt;{@link CityDetailDTO}&gt; - La ciudad buscada
+     * @return JSON {@link CityDetailDTO} - La ciudad buscada
      */
     @GET
     @Path("{id: \\d+}")
@@ -120,19 +117,19 @@ public class CityResource {
     }
     
     /**
-     * <h1>PUT /api/cities/{id} : Actualizar ciudad</h1><br><br>
-     * Cuerpo de peticion: JSON&lt;{@link CityDetailDTO}&gt;<br><br>
+     * <h1>PUT /api/cities/{id} : Actualizar ciudad</h1>
+     * <p>Cuerpo de peticion: JSON {@link CityDetailDTO}</p>
      * 
-     * Actualiza la ciudad con el ID recibido en la URL con la informacion que se recibe en el cuerpo de la peticion.<br><br>
+     * <p>Actualiza la ciudad con el ID recibido en la URL con la informacion que se recibe en el cuerpo de la peticion.</p>
      * 
      * Codigos de respuesta<br>
-     * <code style="color: mediumseagreen; background-color: #eaffe0;">200 OK</code> 
-     * Se actualiza la ciudad y se regresa un objeto identico.<br>
-     * <code style="color: #c7254e; background-color: #f9f2f4;">412 Precodition Failed</code> 
-     * No existe la ciudad o no fue posible actualizarla en la base de datos.
+     * <code style="color: mediumseagreen; background-color: #eaffe0;">200 OK
+     * Se actualiza la ciudad y se regresa un objeto identico.</code> 
+     * <code style="color: #c7254e; background-color: #f9f2f4;">412 Precodition Failed
+     * No existe la ciudad.</code> 
      * @param id Identificador de la ciudad que se desea actualizar.
      * @param city {@link CityDetailDTO} La ciudad que se desea guardar.
-     * @return JSON&lt;{@link CityDetailDTO}&gt; - La ciudad guardada.
+     * @return JSON {@link CityDetailDTO} - La ciudad guardada.
      * @throws BusinessLogicException {@link BusinessLogicExceptionMapper} - Error de logica que se genera al no poder actualizar la ciudad.
      */
     @PUT
@@ -142,16 +139,16 @@ public class CityResource {
     }
     
     /**
-     * <h1>DELETE /api/cities/{id} : Borrar ciudad por id</h1><br><br>
+     * <h1>DELETE /api/cities/{id} : Borrar ciudad por id</h1>
      * 
-     * Borra la ciudad con el ID asociado recibido en la URL.<br><br>
+     * <p>Borra la ciudad con el ID asociado recibido en la URL.</p>
      * 
      * Codigos de respuesta<br>
-     * <code style="color: mediumseagreen; background-color: #eaffe0;">200 OK</code>
-     * Se elimino la ciudad.<br>
-     * <code style="color: #c7254e; background-color: #f9f2f4;">404 Not Found</code>
+     * <code style="color: mediumseagreen; background-color: #eaffe0;">200 OK
+     * Se elimino la ciudad.</code>
+     * <code style="color: #c7254e; background-color: #f9f2f4;">404 Not Found
      * No se pudo acceder a la base de datos de ciudades, o no existe la ciudad buscada.
-     * @param id Identificador de la ciudad que se desea borrar
+     * @param id Identificador de la ciudad que se desea borrar</code>
      * @throws BusinessLogicException - {@link BusinessLogicExceptionMapper} Error de logica cuando no se encuentra la ciudad.
      */
     @DELETE
