@@ -97,5 +97,5 @@ Es posible usar [Postman](http://www.getpostman.com/) para probar el servicio RE
 
 La documentación del código se encuentra dividida en dos partes:
 
-[Documentación proyecto cities-back](https://uniandes-isis2603.github.io/citybasico/docs/back)
-[Documentación proyecto cities-web](https://uniandes-isis2603.github.io/citybasico/docs/web)
+*  [Documentación proyecto cities-back](https://uniandes-isis2603.github.io/citybasico/docs/back)
+*  [Documentación proyecto cities-web](https://uniandes-isis2603.github.io/citybasico/docs/web)
