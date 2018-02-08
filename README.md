@@ -91,3 +91,11 @@ Es posible usar [Postman](http://www.getpostman.com/) para probar el servicio RE
 | ------- | ------- |
 | Obtener las ciudades | GET http://localhost:8080/cities-web/api/cities |
 | Agregar una ciudad   | POST http://localhost:8080/cities-web/api/cities  incluyendo en la petición una ciudad. Por ejemplo, es posible usar `{"name": "barranquilla" }` |
+
+
+## Documentación de Código
+
+La documentación del código se encuentra dividida en dos partes:
+
+[Documentación proyecto cities-back](https://uniandes-isis2603.github.io/citybasico/docs/back)
+[Documentación proyecto cities-web](https://uniandes-isis2603.github.io/citybasico/docs/web)
