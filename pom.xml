@@ -113,6 +113,7 @@
                 <configuration>
                   <reportOutputDirectory>${project.reporting.outputDirectory}/../../../</reportOutputDirectory>
                   <destDir>docs</destDir>
+                  <aggregate>true</aggregate>
                 </configuration>
             </plugin>
         </plugins>
